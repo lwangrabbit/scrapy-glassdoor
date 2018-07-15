@@ -1,0 +1,20 @@
+BOT_NAME = 'review'
+BOT_VERSION = '1.0'
+
+SPIDER_MODULES = ['review.spiders']
+NEWSPIDER_MODULE = 'review.spiders'
+USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
+ITEM_PIPELINES = {'review.pipelines.ReviewFilePipeline':5}
+
+RETRY_ENABLED = True
+RETRY_TIMES = 10
+
+DOWNLOAD_TIMEOUT = 120
+DOWNLOAD_DELAY = 2
+
+MEMUSAGE_LIMIT_MB = 512
+
+DUPEFILTER_CLASS = 'review.dupefilter.CloseDupefilter'
+
+CONCURRENT_REQUESTS = 5
+CONCURRENT_REQUESTS_PER_DOMAIN = 5
